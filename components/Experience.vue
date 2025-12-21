@@ -1,21 +1,12 @@
-<script setup lang="ts">
-const isHovered = ref<boolean>(false);
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <section
-    @mouseenter="isHovered = true"
-    @mouseleave="isHovered = false"
-    class="flex-1 bg-white border border-gray-300 rounded-xl p-4 sm:p-8 shadow-sm"
+    class="flex-1 bg-white border border-gray-300 sm:rounded-xl p-4 sm:p-8 shadow-sm transition-all duration-500 hover:ring-2 hover:ring-emerald-600 hover:border-emerald-600"
   >
-    <div class="flex items-center gap-4">
-      <i class="pi pi-briefcase text-xl text-neutral-800"></i>
-      <h2
-        class="text-xl sm:text-2xl text-neutral-800 font-semibold"
-        :class="[
-          isHovered ? 'underline decoration-8 decoration-emerald-600' : '',
-        ]"
-      >
+    <div class="flex items-center gap-2">
+      <Icon name="material-symbols:work-outline" size="24"" />
+      <h2 class="font-playfair text-xl sm:text-2xl font-semibold">
         Experience
       </h2>
     </div>
