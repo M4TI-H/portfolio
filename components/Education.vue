@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const isHovered = ref<boolean>(false);
+
 const educationData = [
   {
     school: `"Elektryk" Technical School`,
@@ -12,7 +14,7 @@ const educationData = [
     school: "Gdańsk University of Technology",
     start: "Oct 2024",
     end: "current (III sem.)",
-    profession: "Data Engineering (B.Eng.)",
+    profession: "Data Engineering (B. Eng.)",
     description:
       "Currently in my 3rd semester, I focus on data processing and statistical analysis using Python. I am actively expanding the solid programming foundation built in technical school. My curriculum also includes business-oriented subjects like economics and management, allowing me to understand the data context better.",
   },
@@ -21,11 +23,13 @@ const educationData = [
 
 <template>
   <section
+    @mouseenter="isHovered = true"
+    @mouseleave="isHovered = false"
     class="flex-1 flex flex-col bg-white border border-gray-300 sm:rounded-xl p-4 sm:p-8 gap-4 sm:gap-2 shadow-sm transition-all duration-500 hover:ring-2 hover:ring-emerald-600 hover:border-emerald-600"
   >
     <div class="flex items-center gap-2">
       <Icon name="material-symbols:school-outline-rounded" size="24" />
-      <h2 class="font-playfair text-xl sm:text-2xl font-semibold">Education</h2>
+      <TextAnimation :text="`Education`" :active="isHovered" />
     </div>
     <div class="flex flex-col gap-4">
       <div v-for="(e, id) in educationData" :key="id" class="w-full flex gap-4">

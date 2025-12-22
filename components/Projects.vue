@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const isHovered = ref<boolean>(false);
+
 const projectsData = [
   {
     name: "Lazur E-commerce",
@@ -18,7 +20,9 @@ const projectsData = [
   {
     name: "JJ English School Website",
     url: "https://github.com/M4TI-H/jjenglishschool",
-    description: "",
+    url2: "https://jjenglishschool.pl",
+    description:
+      "Delivered a comprehensive digital solution for a language school to streamline their operations. I built a custom CMS on top of Supabase, empowering the client to update content independently. To improve user experience, I integrated external scheduling systems, allowing students to view the class calendar and book sessions directly through the platform.",
     icons: [
       "logos:typescript-icon",
       "logos:nuxt-icon",
@@ -60,11 +64,13 @@ const projectsData = [
 
 <template>
   <section
+    @mouseenter="isHovered = true"
+    @mouseleave="isHovered = false"
     class="w-full max-w-7xl h-auto shrink-0 flex flex-col bg-white border border-gray-300 sm:rounded-xl p-4 sm:p-8 gap-4 shadow-sm transition-all duration-500 hover:ring-2 hover:ring-emerald-600 hover:border-emerald-600"
   >
     <div class="flex items-center gap-2">
       <Icon name="mdi:application-brackets-outline" size="24" />
-      <h2 class="font-playfair text-xl sm:text-2xl font-semibold">Projects</h2>
+      <TextAnimation :text="`Projects`" :active="isHovered" />
     </div>
     <ProjectCard
       v-for="(project, id) in projectsData"

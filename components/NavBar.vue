@@ -3,6 +3,7 @@ const visibleDrawer = ref<boolean>(false);
 const time12h = ref<string>("");
 const time24h = ref<string>("");
 const selectedClock12 = ref<boolean>(false);
+const isHovered = ref<boolean>(false);
 
 const updateTime = () => {
   const now = new Date();
@@ -35,13 +36,11 @@ onMounted(() => {
 <template>
   <div class="fixed sm:relative z-20 w-full max-w-7xl">
     <div
-      class="relative z-20 w-full h-16 shrink-0 flex items-center bg-white border border-gray-300 sm:rounded-xl p-4 sm:p-8 sm:shadow-sm"
+      @mouseenter="isHovered = true"
+      @mouseleave="isHovered = false"
+      class="relative z-30 w-full h-16 shrink-0 flex items-center bg-white border border-gray-300 sm:rounded-xl p-4 sm:p-8 sm:shadow-sm"
     >
-      <p
-        class="font-playfair sm:text-xl text-neutral-800 font-bold whitespace-nowrap select-none"
-      >
-        Mateusz Hann
-      </p>
+      <TextAnimation :text="`Mateusz Hann`" :active="isHovered" />
 
       <button
         @click="selectedClock12 = !selectedClock12"
@@ -58,64 +57,93 @@ onMounted(() => {
           :name="
             !visibleDrawer ? 'material-symbols:menu' : 'material-symbols:close'
           "
-          class="text-neutral-800 text-xl"
+          class="text-neutral-800 text-xl transition-transform duration-300"
+          :class="{ 'rotate-180': visibleDrawer }"
         />
       </button>
 
       <div class="hidden h-full md:flex items-center gap-8 ml-auto">
-        <a
+        <NuxtLink
+          to="/#background"
           class="text-neutral-800 cursor-pointer hover:underline underline-offset-2 decoration-4 decoration-emerald-600 select-none"
-          >About me</a
+          >Background</NuxtLink
         >
-        <a
+
+        <NuxtLink
+          to="/#projects"
           class="text-neutral-800 cursor-pointer hover:underline underline-offset-2 decoration-4 decoration-emerald-600 select-none"
-          >Projects</a
+          >Projects</NuxtLink
         >
-        <a
+        <NuxtLink
+          to="/#achievements"
           class="text-neutral-800 cursor-pointer hover:underline underline-offset-2 decoration-4 decoration-emerald-600 select-none"
-          >Achievements</a
+          >Achievements</NuxtLink
         >
-        <a
+        <NuxtLink
+          to="/#aboutme"
           class="text-neutral-800 cursor-pointer hover:underline underline-offset-2 decoration-4 decoration-emerald-600 select-none"
-          >Contact</a
+          >About me</NuxtLink
         >
+
         <button
           @click="selectedClock12 = !selectedClock12"
-          class="w-30 text-xl font-semibold ml-auto mr-2 font-playfair hover:bg-emerald-600 hover:text-neutral-100 px-2 py-1 rounded-xl select-none"
+          class="w-32 text-xl font-semibold ml-auto mr-2 font-playfair hover:bg-emerald-600 hover:text-neutral-100 px-2 py-1 rounded-xl select-none transition-colors"
         >
           {{ selectedClock12 ? time12h : time24h }}
         </button>
       </div>
     </div>
 
-    <div
-      v-if="visibleDrawer"
-      class="fixed w-full h-screen z-10 bg-black/50"
-    ></div>
-    <div
-      v-if="visibleDrawer"
-      class="absolute left-0 w-full z-20 bg-white border sm:border-gray-300 sm:rounded-xl shadow-lg flex flex-col sm:mt-2 *:md:hidden"
+    <Transition
+      enter-active-class="transition-opacity duration-300 ease-out"
+      enter-from-class="opacity-0"
+      enter-to-class="opacity-100"
+      leave-active-class="transition-opacity duration-200 ease-in"
+      leave-from-class="opacity-100"
+      leave-to-class="opacity-0"
     >
-      <a
-        class="w-full p-4 text-center active:bg-gray-100 select-none"
+      <div
+        v-if="visibleDrawer"
         @click="visibleDrawer = false"
-        >About me</a
+        class="fixed inset-0 w-full h-screen z-10 bg-black/40 backdrop-blur-sm"
+      ></div>
+    </Transition>
+
+    <Transition
+      enter-active-class="transition-all duration-300 ease-out"
+      enter-from-class="-translate-y-4 opacity-0"
+      enter-to-class="translate-y-0 opacity-100"
+      leave-active-class="transition-all duration-200 ease-in"
+      leave-from-class="translate-y-0 opacity-100"
+      leave-to-class="-translate-y-4 opacity-0"
+    >
+      <div
+        v-if="visibleDrawer"
+        class="absolute left-0 w-full z-20 bg-white border-x border-b border-gray-300 shadow-lg flex flex-col sm:mt-2 rounded-b-xl overflow-hidden"
       >
-      <a
-        class="w-full p-4 text-center active:bg-gray-100 select-none"
-        @click="visibleDrawer = false"
-        >Projects</a
-      >
-      <a
-        class="w-full p-4 text-center active:bg-gray-100 select-none"
-        @click="visibleDrawer = false"
-        >Achievements</a
-      >
-      <a
-        class="w-full p-4 text-center active:bg-gray-100 select-none"
-        @click="visibleDrawer = false"
-        >Contact</a
-      >
-    </div>
+        <NuxtLink
+          to="/#background"
+          class="w-full p-4 text-center active:bg-gray-100 hover:bg-gray-50 transition-colors select-none border-b border-gray-100"
+          @click="visibleDrawer = false"
+          >Background</NuxtLink
+        >
+        <NuxtLink
+          class="w-full p-4 text-center active:bg-gray-100 hover:bg-gray-50 transition-colors select-none border-b border-gray-100"
+          @click="visibleDrawer = false"
+          >Projects</NuxtLink
+        >
+        <NuxtLink
+          class="w-full p-4 text-center active:bg-gray-100 hover:bg-gray-50 transition-colors select-none border-b border-gray-100"
+          @click="visibleDrawer = false"
+          >Achievements</NuxtLink
+        >
+        <NuxtLink
+          to="/#aboutme"
+          class="w-full p-4 text-center active:bg-gray-100 hover:bg-gray-50 transition-colors select-none border-b border-gray-100"
+          @click="visibleDrawer = false"
+          >About me</NuxtLink
+        >
+      </div>
+    </Transition>
   </div>
 </template>
