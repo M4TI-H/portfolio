@@ -6,7 +6,7 @@ const isHovered = ref<boolean>(false);
   <section
     @mouseenter="isHovered = true"
     @mouseleave="isHovered = false"
-    class="w-full max-w-7xl h-auto shrink-0 flex flex-col bg-white border border-gray-300 sm:rounded-xl p-4 sm:p-8 gap-8 shadow-sm transition-all duration-500 hover:ring-2 hover:ring-emerald-600 hover:border-emerald-600"
+    class="w-full max-w-7xl h-auto shrink-0 flex flex-col bg-white border border-gray-300 lg:rounded-xl p-4 sm:p-8 gap-8 shadow-sm transition-all duration-500 hover:ring-2 hover:ring-emerald-600 hover:border-emerald-600"
   >
     <div class="flex items-center gap-2">
       <Icon name="material-symbols:stack-hexagon-outline-rounded" size="24" />

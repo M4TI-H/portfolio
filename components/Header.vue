@@ -18,7 +18,7 @@ const copyToClipboard = async () => {
 
 <template>
   <section
-    class="w-full max-w-7xl h-auto sm:h-96 shrink-0 flex flex-col items-center sm:items-start justify-between sm:flex-row bg-white border border-gray-300 sm:rounded-xl p-4 sm:p-8 gap-4 sm:gap-0 shadow-sm transition-all duration-500 hover:ring-2 hover:ring-emerald-600 hover:border-emerald-600"
+    class="w-full max-w-7xl h-auto sm:h-96 shrink-0 flex flex-col items-center sm:items-start justify-between sm:flex-row bg-white border border-gray-300 lg:rounded-xl p-4 sm:p-8 gap-4 sm:gap-0 shadow-sm transition-all duration-500 hover:ring-2 hover:ring-emerald-600 hover:border-emerald-600"
   >
     <div class="w-full sm:w-3/5 h-full flex flex-col justify-between gap-4">
       <div class="flex flex-col">
@@ -40,20 +40,20 @@ const copyToClipboard = async () => {
 
       <div class="flex flex-col gap-2">
         <div class="flex items-center gap-2">
-          <Icon name="uil:envelope" style="color: black" size="24" />
+          <Icon name="uil:envelope" class="size-6" />
           <p class="italic text-lg sm:text-2xl">{{ email }}</p>
           <button
             @click="copyToClipboard"
             class="hover:bg-gray-200 active:bg-gray-200 flex items-center justify-center p-2 rounded-lg transition-colors"
             :class="[isCopied ? 'hidden' : 'flex']"
           >
-            <Icon name="mdi:content-copy" size="16" />
+            <Icon name="mdi:content-copy" class="text-gray-500 size-4" />
           </button>
           <div
             class="px-2 py-1 bg-emerald-600 rounded-lg"
             :class="[isCopied ? 'flex items-center gap-1' : 'hidden']"
           >
-            <Icon name="mdi:tick" size="16" style="color: white" />
+            <Icon name="mdi:tick" class="text-neutral-100 size-4" />
             <p class="text-neutral-100">Copied</p>
           </div>
         </div>
@@ -62,7 +62,7 @@ const copyToClipboard = async () => {
           to="https://github.com/M4TI-H"
           class="flex items-center gap-2"
         >
-          <Icon name="uil:github" style="color: black" size="24" />
+          <Icon name="uil:github" class="size-6" />
           <p
             class="italic text-lg sm:text-2xl hover:underline decoration-4 decoration-emerald-600"
           >
@@ -74,7 +74,7 @@ const copyToClipboard = async () => {
           to="https://www.linkedin.com/in/mateusz-hann-713ba4367/"
           class="flex items-center gap-2"
         >
-          <Icon name="uil:linkedin" style="color: black" size="24" />
+          <Icon name="uil:linkedin" class="size-6" />
           <p
             class="italic text-lg sm:text-2xl hover:underline decoration-4 decoration-emerald-600"
           >

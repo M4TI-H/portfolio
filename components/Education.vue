@@ -25,7 +25,7 @@ const educationData = [
   <section
     @mouseenter="isHovered = true"
     @mouseleave="isHovered = false"
-    class="flex-1 flex flex-col bg-white border border-gray-300 sm:rounded-xl p-4 sm:p-8 gap-4 sm:gap-2 shadow-sm transition-all duration-500 hover:ring-2 hover:ring-emerald-600 hover:border-emerald-600"
+    class="flex-1 flex flex-col bg-white border border-gray-300 lg:rounded-xl p-4 sm:p-8 gap-4 sm:gap-2 shadow-sm transition-all duration-500 hover:ring-2 hover:ring-emerald-600 hover:border-emerald-600"
   >
     <div class="flex items-center gap-2">
       <Icon name="material-symbols:school-outline-rounded" size="24" />

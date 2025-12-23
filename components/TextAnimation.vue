@@ -9,7 +9,7 @@ const animatedText = props.text.split("");
 
 <template>
   <h1
-    class="font-playfair text-xl sm:text-2xl font-bold w-fit cursor-default group flex"
+    class="font-playfair text-lg sm:text-xl xl:text-2xl font-bold w-fit cursor-default group flex"
     :class="{ 'is-animating': active }"
   >
     <span

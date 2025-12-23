@@ -25,33 +25,79 @@ const updateTime = () => {
   });
 };
 
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    const elementPosition =
+      element.getBoundingClientRect().top + window.scrollY;
+
+    const headerOffset = 120; //navbar size
+
+    const offsetPosition = elementPosition - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+
+    visibleDrawer.value = false;
+  }
+};
+
+const currentSection = ref<any>();
+
 let timer: any;
+let observer: IntersectionObserver | null = null;
 
 onMounted(() => {
   updateTime();
   timer = setInterval(updateTime, 1000);
+
+  const observerOptions = {
+    root: null,
+    rootMargin: "-50% 0px -50% 0px",
+    threshold: 0,
+  };
+
+  observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        currentSection.value = entry.target.id;
+      }
+    });
+  }, observerOptions);
+
+  const sectionsIds = [
+    "background",
+    "projects",
+    "achievements",
+    "certificates",
+    "aboutme",
+  ];
+
+  sectionsIds.forEach((id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      observer?.observe(element);
+    }
+  });
 });
 </script>
 
 <template>
-  <div class="fixed sm:relative z-20 w-full max-w-7xl">
+  <div
+    class="fixed z-20 w-full sm:backdrop-blur-sm xl:rounded-b-lg lg:px-8 xl:px-24 xl:pt-8"
+  >
     <div
       @mouseenter="isHovered = true"
       @mouseleave="isHovered = false"
-      class="relative z-30 w-full h-16 shrink-0 flex items-center bg-white border border-gray-300 sm:rounded-xl p-4 sm:p-8 sm:shadow-sm"
+      class="relative z-30 w-full h-16 shrink-0 flex items-center bg-white border border-gray-300 xl:rounded-xl p-4 sm:p-8 sm:shadow-sm"
     >
       <TextAnimation :text="`Mateusz Hann`" :active="isHovered" />
 
       <button
-        @click="selectedClock12 = !selectedClock12"
-        class="w-22 flex sm:hidden text-xl font-semibold ml-auto mr-2 font-playfair select-none"
-      >
-        {{ selectedClock12 ? time12h : time24h }}
-      </button>
-
-      <button
         @click="visibleDrawer = !visibleDrawer"
-        class="active:bg-gray-100 flex md:hidden items-center justify-center p-2 rounded-lg transition-colors"
+        class="active:bg-gray-100 flex lg:hidden items-center justify-center p-2 rounded-lg transition-colors ml-auto"
       >
         <Icon
           :name="
@@ -62,38 +108,75 @@ onMounted(() => {
         />
       </button>
 
-      <div class="hidden h-full md:flex items-center gap-8 ml-auto">
-        <NuxtLink
-          to="/#background"
-          class="text-neutral-800 cursor-pointer hover:underline underline-offset-2 decoration-4 decoration-emerald-600 select-none"
-          >Background</NuxtLink
+      <div class="hidden h-full lg:flex items-center gap-8 ml-auto">
+        <button
+          @click="scrollToSection('background')"
+          class="cursor-pointer hover:bg-gray-100 p-1 xl:p-2 rounded-lg select-none transition-colors"
+          :class="
+            currentSection === 'background'
+              ? 'text-emerald-600 font-semibold'
+              : 'text-neutral-600'
+          "
         >
+          My background
+        </button>
 
-        <NuxtLink
-          to="/#projects"
-          class="text-neutral-800 cursor-pointer hover:underline underline-offset-2 decoration-4 decoration-emerald-600 select-none"
-          >Projects</NuxtLink
+        <button
+          @click="scrollToSection('projects')"
+          class="cursor-pointer hover:bg-gray-100 p-1 xl:p-2 rounded-lg select-none transition-colors"
+          :class="
+            currentSection === 'projects'
+              ? 'text-emerald-600 font-semibold'
+              : 'text-neutral-600'
+          "
         >
-        <NuxtLink
-          to="/#achievements"
-          class="text-neutral-800 cursor-pointer hover:underline underline-offset-2 decoration-4 decoration-emerald-600 select-none"
-          >Achievements</NuxtLink
+          Projects
+        </button>
+
+        <button
+          @click="scrollToSection('achievements')"
+          class="cursor-pointer hover:bg-gray-100 p-1 xl:p-2 rounded-lg select-none transition-colors"
+          :class="
+            currentSection === 'achievements'
+              ? 'text-emerald-600 font-semibold'
+              : 'text-neutral-600'
+          "
         >
-        <NuxtLink
-          to="/#aboutme"
-          class="text-neutral-800 cursor-pointer hover:underline underline-offset-2 decoration-4 decoration-emerald-600 select-none"
-          >About me</NuxtLink
+          Achievements
+        </button>
+
+        <button
+          @click="scrollToSection('certificates')"
+          class="cursor-pointer hover:bg-gray-100 p-1 xl:p-2 rounded-lg select-none transition-colors"
+          :class="
+            currentSection === 'certificates'
+              ? 'text-emerald-600 font-semibold'
+              : 'text-neutral-600'
+          "
         >
+          Certificates
+        </button>
+
+        <button
+          @click="scrollToSection('aboutme')"
+          class="cursor-pointer hover:bg-gray-100 p-1 xl:p-2 rounded-lg select-none transition-colors"
+          :class="
+            currentSection === 'aboutme'
+              ? 'text-emerald-600 font-semibold'
+              : 'text-neutral-600'
+          "
+        >
+          About me
+        </button>
 
         <button
           @click="selectedClock12 = !selectedClock12"
-          class="w-32 text-xl font-semibold ml-auto mr-2 font-playfair hover:bg-emerald-600 hover:text-neutral-100 px-2 py-1 rounded-xl select-none transition-colors"
+          class="text-lg xl:text-xl font-semibold ml-auto font-playfair hover:bg-emerald-600 hover:text-neutral-100 px-2 py-1 rounded-xl select-none"
         >
           {{ selectedClock12 ? time12h : time24h }}
         </button>
       </div>
     </div>
-
     <Transition
       enter-active-class="transition-opacity duration-300 ease-out"
       enter-from-class="opacity-0"
@@ -105,7 +188,7 @@ onMounted(() => {
       <div
         v-if="visibleDrawer"
         @click="visibleDrawer = false"
-        class="fixed inset-0 w-full h-screen z-10 bg-black/40 backdrop-blur-sm"
+        class="fixed inset-0 z-10 bg-black/40 backdrop-blur-sm"
       ></div>
     </Transition>
 
@@ -121,28 +204,40 @@ onMounted(() => {
         v-if="visibleDrawer"
         class="absolute left-0 w-full z-20 bg-white border-x border-b border-gray-300 shadow-lg flex flex-col sm:mt-2 rounded-b-xl overflow-hidden"
       >
-        <NuxtLink
-          to="/#background"
+        <button
+          @click="scrollToSection('background')"
           class="w-full p-4 text-center active:bg-gray-100 hover:bg-gray-50 transition-colors select-none border-b border-gray-100"
-          @click="visibleDrawer = false"
-          >Background</NuxtLink
         >
-        <NuxtLink
+          My background
+        </button>
+
+        <button
+          @click="scrollToSection('projects')"
           class="w-full p-4 text-center active:bg-gray-100 hover:bg-gray-50 transition-colors select-none border-b border-gray-100"
-          @click="visibleDrawer = false"
-          >Projects</NuxtLink
         >
-        <NuxtLink
+          Projects
+        </button>
+
+        <button
+          @click="scrollToSection('achievements')"
           class="w-full p-4 text-center active:bg-gray-100 hover:bg-gray-50 transition-colors select-none border-b border-gray-100"
-          @click="visibleDrawer = false"
-          >Achievements</NuxtLink
         >
-        <NuxtLink
-          to="/#aboutme"
+          Achievements
+        </button>
+
+        <button
+          @click="scrollToSection('certificates')"
           class="w-full p-4 text-center active:bg-gray-100 hover:bg-gray-50 transition-colors select-none border-b border-gray-100"
-          @click="visibleDrawer = false"
-          >About me</NuxtLink
         >
+          Certificates
+        </button>
+
+        <button
+          @click="scrollToSection('aboutme')"
+          class="w-full p-4 text-center active:bg-gray-100 hover:bg-gray-50 transition-colors select-none border-b border-gray-100"
+        >
+          About me
+        </button>
       </div>
     </Transition>
   </div>
