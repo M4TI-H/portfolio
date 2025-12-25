@@ -80,7 +80,7 @@ const isHovered = ref<boolean>(false);
       <div class="flex flex-col gap-4">
         <div class="flex items-center gap-2 pb-2 border-b border-gray-300">
           <Icon
-            name="material-symbols:settings-outline-rounded"
+            name="material-symbols:terminal"
             class="text-neutral-500 size-6"
           />
           <h3 class="text-xl text-neutral-500 font-semibold">

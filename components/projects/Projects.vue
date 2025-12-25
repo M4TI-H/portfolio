@@ -23,6 +23,9 @@ const projectsData = [
       "Supabase's advanced features",
       "Global state management using Pinia stores",
     ],
+    imagesMobile: ["/projects/lazur/mobile/1.png"],
+    imagesFull: ["/projects/lazur/full/1.png"],
+    cover: "/projects/lazur/cover.png",
   },
   {
     name: "JJ English School Website",
@@ -44,6 +47,9 @@ const projectsData = [
       "Integration with external systems (Bookero, EmailJS)",
       "Creating user friendly interface",
     ],
+    imagesMobile: ["/projects/jjenglish/mobile/1.png"],
+    imagesFull: ["/projects/jjenglish/full/1.png"],
+    cover: "/projects/jjenglish/cover.png",
   },
   {
     name: "Penny Tracker",
@@ -65,6 +71,9 @@ const projectsData = [
       "Soon to be reworked - FastAPI integration",
       "Responsive design based on Figma project prepared beforehand",
     ],
+    imagesMobile: ["/projects/pennytracker/mobile/1.png"],
+    imagesFull: ["/projects/pennytracker/full/1.png"],
+    cover: "/projects/pennytracker/cover.png",
   },
   {
     name: "Wordle Clone",
@@ -77,6 +86,17 @@ const projectsData = [
       "React fundamentals",
       "Code refactoring - good decomposition practices",
     ],
+    imagesMobile: [
+      "/projects/wordle/mobile/1.png",
+      "/projects/wordle/mobile/2.png",
+      "/projects/wordle/mobile/3.png",
+    ],
+    imagesFull: [
+      "/projects/wordle/full/1.png",
+      "/projects/wordle/full/2.png",
+      "/projects/wordle/full/3.png",
+    ],
+    cover: "/projects/wordle/cover.png",
   },
   {
     name: "PinLink",
@@ -85,6 +105,9 @@ const projectsData = [
       "PinLink is a dynamic dashboard for saving and categorizing links. I created this application to practice building modern user interfaces with Tailwind CSS. Currently under active development.",
     icons: ["logos:javascript", "logos:react", "logos:tailwindcss-icon"],
     learned: ["Responsive design", "Program rework still in progress..."],
+    imagesMobile: ["/projects/pinlink/mobile/1.png"],
+    imagesFull: ["/projects/pinlink/full/1.png"],
+    cover: "/projects/pinlink/cover.png",
   },
 ];
 </script>
