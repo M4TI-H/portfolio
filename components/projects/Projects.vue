@@ -18,6 +18,11 @@ const projectsData = [
       "logos:supabase-icon",
       "logos:docker-icon",
     ],
+    learned: [
+      "Responsive design",
+      "Supabase's advanced features",
+      "Global state management using Pinia stores",
+    ],
   },
   {
     name: "JJ English School Website",
@@ -34,11 +39,17 @@ const projectsData = [
       "logos:supabase-icon",
       "logos:docker-icon",
     ],
+    learned: [
+      "First time working directly with a client",
+      "Integration with external systems (Bookero, EmailJS)",
+      "Creating user friendly interface",
+    ],
   },
   {
     name: "Penny Tracker",
     url: "https://github.com/M4TI-H/PennyTracker",
-    description: "",
+    description:
+      "A key challenge I faced was working with backend development in Python for the first time. This required learning how to structure a scalable and maintainable application architecture, manage data flow between the frontend and backend, and implement reliable endpoints for storing and retrieving user financial data. The project is still in development, and I plan to expand its capabilities by introducing new features and applying my Python data analysis skills.",
     icons: [
       "logos:typescript-icon",
       "logos:nuxt-icon",
@@ -48,6 +59,12 @@ const projectsData = [
       "logos:mysql-icon",
       "logos:figma",
     ],
+    learned: [
+      "Mastering TailwindCSS",
+      "Soon to be reworked - global state management",
+      "Soon to be reworked - FastAPI integration",
+      "Responsive design based on Figma project prepared beforehand",
+    ],
   },
   {
     name: "Wordle Clone",
@@ -55,12 +72,19 @@ const projectsData = [
     description:
       "A practice project created to learn the basics of Tailwind CSS. I recreated the core mechanics of Wordle to understand the utility-first workflow and grid system.",
     icons: ["logos:javascript", "logos:react", "logos:tailwindcss-icon"],
+    learned: [
+      "TailwindCSS flexbox and grid layout",
+      "React fundamentals",
+      "Code refactoring - good decomposition practices",
+    ],
   },
   {
     name: "PinLink",
     url: "https://github.com/M4TI-H/PinLink",
-    description: "",
+    description:
+      "PinLink is a dynamic dashboard for saving and categorizing links. I created this application to practice building modern user interfaces with Tailwind CSS. Currently under active development.",
     icons: ["logos:javascript", "logos:react", "logos:tailwindcss-icon"],
+    learned: ["Responsive design", "Program rework still in progress..."],
   },
 ];
 </script>

@@ -58,6 +58,18 @@ const props = defineProps<{
             <p class="text-neutral-600">
               {{ data.description }}
             </p>
+            <div>
+              <p class="text-neutral-600">What I learned:</p>
+              <ul class="list-inside list-disc">
+                <li
+                  v-for="(skill, id) in data.learned"
+                  :key="id"
+                  class="text-neutral-600"
+                >
+                  {{ skill }};
+                </li>
+              </ul>
+            </div>
 
             <div class="flex items-center gap-4 mt-auto">
               <NuxtLink

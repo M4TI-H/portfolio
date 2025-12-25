@@ -28,17 +28,7 @@ const updateTime = () => {
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
   if (element) {
-    const elementPosition =
-      element.getBoundingClientRect().top + window.scrollY;
-
-    const headerOffset = 120; //navbar size
-
-    const offsetPosition = elementPosition - headerOffset;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
+    element.scrollIntoView({ behavior: "smooth" });
 
     visibleDrawer.value = false;
   }
@@ -86,7 +76,7 @@ onMounted(() => {
 
 <template>
   <div
-    class="fixed z-20 w-full sm:backdrop-blur-sm xl:rounded-b-lg lg:px-8 xl:px-24 xl:pt-8"
+    class="fixed z-50 w-full sm:backdrop-blur-sm xl:rounded-b-lg lg:px-8 xl:px-24 xl:pt-8"
   >
     <div
       @mouseenter="isHovered = true"

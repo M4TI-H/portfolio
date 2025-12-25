@@ -4,61 +4,81 @@ import Header from "~/components/Header.vue";
 
 <template>
   <div
-    class="relative min-h-fit w-full min-w-fit flex flex-col items-center bg-neutral-200 sm:gap-8"
+    class="relative min-h-fit w-full min-w-fit flex flex-col items-center bg-neutral-200 sm:gap-8 pb-20"
   >
     <NavBar />
-
+    <ScrollToTop />
     <Header class="mt-16 xl:mt-32" />
 
-    <div
+    <section
       id="background"
-      class="flex flex-col items-center gap-1 my-4 sm:my-0 px-2"
+      class="w-full flex flex-col items-center scroll-mt-32 gap-8"
     >
-      <h1 class="font-playfair text-2xl md:text-4xl font-bold">
-        My background
-      </h1>
-      <p class="md:text-xl text-neutral-600 text-center">
-        Tracing the steps of my professional evolution.
-      </p>
-    </div>
-    <div class="w-full max-w-7xl flex flex-col lg:flex-row lg:gap-8">
-      <Education />
-      <Experience />
-    </div>
-    <div
+      <div class="flex flex-col items-center gap-1 px-2">
+        <h1 class="font-playfair text-2xl md:text-4xl font-bold">
+          My background
+        </h1>
+        <p class="md:text-xl text-neutral-600 text-center">
+          Tracing the steps of my professional evolution.
+        </p>
+      </div>
+      <div class="w-full max-w-7xl flex flex-col lg:flex-row lg:gap-8">
+        <Education />
+        <Experience />
+      </div>
+    </section>
+
+    <section
       id="projects"
-      class="flex flex-col items-center gap-1 my-4 sm:my-0 px-2"
+      class="w-full flex flex-col items-center scroll-mt-32 gap-8"
     >
-      <h1 class="font-playfair text-2xl md:text-4xl font-bold">My projects</h1>
-      <p class="md:text-xl text-neutral-600 text-center">
-        See what I've been working on so far.
-      </p>
-    </div>
-    <Projects />
-    <Stack />
-    <div
+      <div class="flex flex-col items-center gap-1 px-2">
+        <h1 class="font-playfair text-2xl md:text-4xl font-bold">
+          My projects
+        </h1>
+        <p class="md:text-xl text-neutral-600 text-center">
+          See what I've been working on so far.
+        </p>
+      </div>
+      <Projects />
+      <Stack />
+    </section>
+
+    <section
       id="achievements"
-      class="flex flex-col items-center gap-1 my-4 sm:my-0 px-2"
+      class="w-full flex flex-col items-center scroll-mt-32 gap-8"
     >
-      <h1 class="font-playfair text-2xl md:text-4xl font-bold">Achievements</h1>
-      <p class="text-sm md:text-xl text-neutral-600">See my successes!</p>
-    </div>
-    <Achievements />
-    <div
+      <div class="flex flex-col items-center gap-1 px-2">
+        <h1 class="font-playfair text-2xl md:text-4xl font-bold">
+          Achievements
+        </h1>
+        <p class="text-sm md:text-xl text-neutral-600">See my successes!</p>
+      </div>
+      <Achievements />
+    </section>
+
+    <section
       id="certificates"
-      class="flex flex-col items-center gap-1 my-4 sm:my-0 px-2"
+      class="w-full flex flex-col items-center scroll-mt-32 gap-8"
     >
-      <h1 class="font-playfair text-2xl md:text-4xl font-bold">Certificates</h1>
-      <p class="text-sm md:text-xl text-neutral-600">My proven skills.</p>
-    </div>
-    <Certificates />
-    <div
+      <div class="flex flex-col items-center gap-1 px-2">
+        <h1 class="font-playfair text-2xl md:text-4xl font-bold">
+          Certificates
+        </h1>
+        <p class="text-sm md:text-xl text-neutral-600">My proven skills.</p>
+      </div>
+      <Certificates />
+    </section>
+
+    <section
       id="aboutme"
-      class="flex flex-col items-center gap-1 my-4 sm:my-0 px-2"
+      class="w-full flex flex-col items-center scroll-mt-32 gap-8"
     >
-      <h1 class="font-playfair text-2xl md:text-4xl font-bold">About me</h1>
-      <p class="text-sm md:text-xl text-neutral-600">Get to know me!</p>
-    </div>
-    <AboutMe />
+      <div class="flex flex-col items-center gap-1 px-2">
+        <h1 class="font-playfair text-2xl md:text-4xl font-bold">About me</h1>
+        <p class="text-sm md:text-xl text-neutral-600">Get to know me!</p>
+      </div>
+      <AboutMe />
+    </section>
   </div>
 </template>

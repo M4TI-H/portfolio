@@ -13,7 +13,7 @@ const isHovered = ref<boolean>(false);
       <TextAnimation :text="`Technologies I use`" :active="isHovered" />
     </div>
 
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-2">
       <div class="flex flex-col gap-4">
         <div class="flex items-center gap-2 pb-2 border-b border-gray-300">
           <Icon name="material-symbols:web" class="text-neutral-500 size-6" />
@@ -75,6 +75,22 @@ const isHovered = ref<boolean>(false);
           <StackIcon icon="logos:figma" title="Figma" />
           <StackIcon icon="logos:adobe-xd" title="Adobe Xd" />
           <StackIcon icon="logos:adobe-photoshop" title="Photoshop" />
+        </div>
+      </div>
+      <div class="flex flex-col gap-4">
+        <div class="flex items-center gap-2 pb-2 border-b border-gray-300">
+          <Icon
+            name="material-symbols:settings-outline-rounded"
+            class="text-neutral-500 size-6"
+          />
+          <h3 class="text-xl text-neutral-500 font-semibold">
+            Other languages
+          </h3>
+        </div>
+        <div class="flex flex-wrap gap-4">
+          <StackIcon icon="logos:python" title="Python" />
+          <StackIcon icon="logos:c-plusplus" title="C++" />
+          <StackIcon icon="logos:c" title="C" />
         </div>
       </div>
     </div>

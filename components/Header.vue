@@ -18,7 +18,7 @@ const copyToClipboard = async () => {
 
 <template>
   <section
-    class="w-full max-w-7xl h-auto sm:h-96 shrink-0 flex flex-col items-center sm:items-start justify-between sm:flex-row bg-white border border-gray-300 lg:rounded-xl p-4 sm:p-8 gap-4 sm:gap-0 shadow-sm transition-all duration-500 hover:ring-2 hover:ring-emerald-600 hover:border-emerald-600"
+    class="w-full max-w-7xl h-auto sm:h-100 shrink-0 flex flex-col items-center sm:items-start justify-between sm:flex-row bg-white border border-gray-300 lg:rounded-xl p-4 sm:p-8 gap-4 sm:gap-0 shadow-sm transition-all duration-500 hover:ring-2 hover:ring-emerald-600 hover:border-emerald-600"
   >
     <div class="w-full sm:w-3/5 h-full flex flex-col justify-between gap-4">
       <div class="flex flex-col">
@@ -81,10 +81,20 @@ const copyToClipboard = async () => {
             Mateusz Hann
           </p>
         </NuxtLink>
+        <a
+          href="/schema.pdf"
+          download="Hann_Mateusz_resume_web_dev"
+          class="mt-4 w-64 p-2 h-16 text-lg font-semibold flex items-center justify-center gap-2 border border-emerald-600 text-neutral-200 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-700 rounded-lg transition-colors duration-300"
+        >
+          Download my resume
+          <Icon name="material-symbols:download-rounded" class="size-8" />
+        </a>
       </div>
     </div>
 
-    <div class="w-full max-w-[16rem] sm:w-2/5 h-full">
+    <div
+      class="w-full max-w-[16rem] sm:w-2/5 h-full rounded-xl shadow-[12px_12px_0_0_#059669]"
+    >
       <img
         class="w-full h-full rounded-xl"
         src="https://images.unsplash.com/photo-1612983857030-0de0831ff4b7?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
