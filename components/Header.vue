@@ -60,6 +60,7 @@ const copyToClipboard = async () => {
 
         <NuxtLink
           to="https://github.com/M4TI-H"
+          target="_blank"
           class="flex items-center gap-2"
         >
           <Icon name="uil:github" class="size-6" />
@@ -72,6 +73,7 @@ const copyToClipboard = async () => {
 
         <NuxtLink
           to="https://www.linkedin.com/in/mateusz-hann-713ba4367/"
+          target="_blank"
           class="flex items-center gap-2"
         >
           <Icon name="uil:linkedin" class="size-6" />
@@ -82,18 +84,21 @@ const copyToClipboard = async () => {
           </p>
         </NuxtLink>
         <a
-          href="/schema.pdf"
+          href="/Mateusz_Hann_Fullstack_Resume.pdf"
           download="Hann_Mateusz_resume_web_dev"
-          class="mt-4 w-64 p-2 h-16 text-lg font-semibold flex items-center justify-center gap-2 border border-emerald-600 text-neutral-200 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-700 rounded-lg transition-colors duration-300"
+          class="mx-auto sm:mx-0 mt-4 w-52 sm:w-64 p-2 h-12 sm:h-16 sm:text-lg font-semibold flex items-center justify-center gap-2 border border-emerald-600 text-neutral-200 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-700 rounded-lg transition-colors duration-300"
         >
           Download my resume
-          <Icon name="material-symbols:download-rounded" class="size-8" />
+          <Icon
+            name="material-symbols:download-rounded"
+            class="size-7 sm:size-8"
+          />
         </a>
       </div>
     </div>
 
     <div
-      class="w-full max-w-[16rem] sm:w-2/5 h-full rounded-xl shadow-[12px_12px_0_0_#059669]"
+      class="w-full max-w-[16rem] sm:w-2/5 h-full rounded-xl shadow-[12px_12px_0_0_#059669] mb-4 sm:mb-0"
     >
       <img
         class="w-full h-full rounded-xl"

@@ -4,7 +4,7 @@ import Header from "~/components/Header.vue";
 
 <template>
   <div
-    class="relative min-h-fit w-full min-w-fit flex flex-col items-center bg-neutral-200 sm:gap-8 pb-20"
+    class="relative min-h-fit w-full min-w-fit flex flex-col items-center bg-neutral-200 gap-8 pb-20"
   >
     <NavBar />
     <ScrollToTop />
