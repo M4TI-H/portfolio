@@ -17,7 +17,7 @@ const isHovered = ref<boolean>(false);
       <div class="w-full md:w-1/3 shrink-0">
         <img
           class="w-full h-full object-cover rounded-xl min-h-[300px] md:min-h-0"
-          src="https://images.unsplash.com/photo-1612983857030-0de0831ff4b7?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="/traveller.png"
           alt="Mateusz Hann"
         />
       </div>

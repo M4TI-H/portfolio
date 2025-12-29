@@ -54,6 +54,7 @@ const isFullscreen = ref<boolean>(true);
             >
               <img
                 v-if="data.cover"
+                loading="lazy"
                 :src="data.cover"
                 :alt="data.name"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 select-none"
@@ -127,6 +128,7 @@ const isFullscreen = ref<boolean>(true);
               </template>
               <template #item="slotProps">
                 <img
+                  loading="lazy"
                   :src="slotProps.item"
                   :alt="data.name"
                   class="block object-contain w-auto h-auto max-w-[90vw] max-h-[85vh]"
@@ -186,13 +188,11 @@ const isFullscreen = ref<boolean>(true);
               </ul>
             </div>
 
-            <div
-              class="flex flex-col sm:flex-row items-center gap-4 mt-auto pt-4"
-            >
+            <div class="flex flex-row items-center gap-4 mt-auto pt-4">
               <NuxtLink
                 :to="data.url"
                 target="_blank"
-                class="w-full sm:w-auto sm:flex-1 px-4 h-10 flex items-center justify-center gap-2 border border-neutral-800 text-neutral-200 bg-neutral-700 hover:bg-neutral-800 active:bg-neutral-800 rounded-lg transition-colors duration-300"
+                class="flex-1 sm:flex-none px-4 h-10 flex items-center justify-center gap-2 border border-neutral-800 text-neutral-200 bg-neutral-700 hover:bg-neutral-800 active:bg-neutral-800 rounded-lg transition-colors duration-300"
               >
                 Visit on
                 <Icon
@@ -204,7 +204,7 @@ const isFullscreen = ref<boolean>(true);
                 v-if="data.url2"
                 :to="data.url2"
                 target="_blank"
-                class="w-full sm:w-auto sm:flex-1 px-4 h-10 flex items-center justify-center gap-2 border border-emerald-600 text-neutral-200 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-700 rounded-lg transition-colors duration-300"
+                class="flex-1 sm:flex-none px-4 h-10 flex items-center justify-center gap-2 border border-emerald-600 text-neutral-200 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-700 rounded-lg transition-colors duration-300"
               >
                 Open in
                 <Icon

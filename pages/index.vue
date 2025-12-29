@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Header from "~/components/Header.vue";
+import Hero from "~/components/Hero.vue";
 </script>
 
 <template>
@@ -8,7 +8,7 @@ import Header from "~/components/Header.vue";
   >
     <NavBar />
     <ScrollToTop />
-    <Header class="mt-16 xl:mt-32" />
+    <Hero class="mt-16 xl:mt-32" />
 
     <section
       id="background"
