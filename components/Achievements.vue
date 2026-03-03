@@ -19,10 +19,7 @@ const isHovered = ref<boolean>(false);
         <h2 class="font-playfair text-lg sm:text-2xl font-semibold text-center">
           Winner of BEST Hackathon - AI category
         </h2>
-        <img
-          class="w-auto h-42 sm:h-64 mx-auto"
-          src="https://images.unsplash.com/photo-1766086892325-74a61d0465f6?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        />
+        <img class="w-auto h-42 sm:h-64 mx-auto" src="/hackathon.jpg" />
         <p class="sm:text-lg">
           Our 4-person team developed an automated system for detecting and
           categorizing defects on PCB boards. As the team's

@@ -221,15 +221,21 @@ const isFullscreen = ref<boolean>(true);
               >
                 Open in
                 <Icon
-                  name="mdi:file"
+                  name="mdi:web"
                   class="size-6 text-neutral-200 transition-colors"
                 />
               </NuxtLink>
               <a
+                v-if="data.instruction"
                 :href="data.instruction"
-                download="Hann_Mateusz_resume_web_dev"
-                v-if="data.task_description"
-                >Download instruction</a
+                :download="data.instruction"
+                class="flex-1 sm:flex-none px-4 h-10 flex items-center justify-center gap-2 border border-emerald-600 text-neutral-200 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-700 rounded-lg transition-colors duration-300"
+              >
+                <Icon
+                  name="mdi:file"
+                  class="size-6 text-neutral-200 transition-colors"
+                />
+                Download instruction</a
               >
             </div>
           </div>
