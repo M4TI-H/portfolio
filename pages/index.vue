@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import Hero from "~/components/Hero.vue";
+import AcademicProjects from "~/components/projects/AcademicProjects.vue";
+import PersonalProjects from "~/components/projects/PersonalProjects.vue";
 </script>
 
 <template>
@@ -40,7 +42,8 @@ import Hero from "~/components/Hero.vue";
           See what I've been working on so far.
         </p>
       </div>
-      <Projects />
+      <PersonalProjects />
+      <AcademicProjects />
       <Stack />
     </section>
 

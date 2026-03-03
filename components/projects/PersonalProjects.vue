@@ -4,6 +4,37 @@ import ProjectCard from "./ProjectCard.vue";
 const isHovered = ref<boolean>(false);
 const projectsData = [
   {
+    name: "Agata Hann Wnętrza",
+    url: "https://github.com/M4TI-H/wnetrzahann",
+    description:
+      "A premium portfolio website designed for an interior designer to showcase architectural realizations. I focused on delivering a high-end user experience through smooth Nuxt transitions and advanced image optimization techniques. The project emphasizes minimalist aesthetics, where I implemented a custom gallery system and a responsive layout tailored to present high-resolution professional photography without compromising performance.",
+    icons: [
+      "logos:typescript-icon",
+      "logos:nuxt-icon",
+      "logos:vue",
+      "logos:tailwindcss-icon",
+    ],
+    learned: ["Nuxt transitions", "Image optimiziation"],
+    imagesFull: ["/projects/unavailable.jpg"],
+    cover: "/projects/unavailable.jpg",
+  },
+  {
+    name: "Hackathon Project",
+    url: "https://github.com/MikolajZamojski/ai-menciarze---pcb-defects",
+    description:
+      "Awarded 1st place at the BEST Hackathon 2025 in the AI category. Our 4-person team developed an automated system for detecting and categorizing defects on PCB boards. As the Lead Frontend Developer, I was responsible for bridging complex AI data with user accessibility. While other teams focused on raw scripts, we delivered a fully functional MVP with a smooth, intuitive interface, which was the key factor in our victory.",
+    icons: [
+      "logos:typescript-icon",
+      "logos:nuxt-icon",
+      "logos:vue",
+      "logos:tailwindcss-icon",
+      "logos:primevue-icon",
+    ],
+    learned: ["Teamwork", "Working under time pressure"],
+    imagesFull: ["/projects/unavailable.jpg"],
+    cover: "/projects/unavailable.jpg",
+  },
+  {
     name: "Lazur E-commerce",
     url: "https://github.com/M4TI-H/lazur",
     description:
@@ -103,21 +134,6 @@ const projectsData = [
     ],
     cover: "/projects/wordle/cover.png",
   },
-  {
-    name: "Hackathon Project",
-    url: "https://github.com/MikolajZamojski/ai-menciarze---pcb-defects",
-    description: "",
-    icons: [
-      "logos:typescript-icon",
-      "logos:nuxt-icon",
-      "logos:vue",
-      "logos:tailwindcss-icon",
-      "logos:primevue-icon",
-    ],
-    learned: ["Responsive design", "Program rework still in progress..."],
-    imagesFull: ["/projects/unavailable.jpg"],
-    cover: "/projects/unavailable.jpg",
-  },
 ];
 </script>
 
@@ -129,7 +145,7 @@ const projectsData = [
   >
     <div class="flex items-center gap-2">
       <Icon name="mdi:application-brackets-outline" size="24" />
-      <TextAnimation :text="`Projects`" :active="isHovered" />
+      <TextAnimation :text="`Personal projects`" :active="isHovered" />
     </div>
     <ProjectCard
       v-for="(project, id) in projectsData"

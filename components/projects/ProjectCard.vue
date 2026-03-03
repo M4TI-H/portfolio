@@ -106,6 +106,7 @@ const isFullscreen = ref<boolean>(true);
                 </button>
 
                 <button
+                  v-if="data.imagesMobile"
                   @click="
                     isFullscreen = !isFullscreen;
                     activeIndex = 0;
@@ -201,6 +202,18 @@ const isFullscreen = ref<boolean>(true);
                 />
               </NuxtLink>
               <NuxtLink
+                v-if="data.url_git2"
+                :to="data.url_git2"
+                target="_blank"
+                class="flex-1 sm:flex-none px-4 h-10 flex items-center justify-center gap-2 border border-neutral-800 text-neutral-200 bg-neutral-700 hover:bg-neutral-800 active:bg-neutral-800 rounded-lg transition-colors duration-300"
+              >
+                Visit on
+                <Icon
+                  name="mdi:github"
+                  class="size-6 text-neutral-200 transition-colors"
+                />
+              </NuxtLink>
+              <NuxtLink
                 v-if="data.url2"
                 :to="data.url2"
                 target="_blank"
@@ -208,10 +221,16 @@ const isFullscreen = ref<boolean>(true);
               >
                 Open in
                 <Icon
-                  name="mdi:web"
+                  name="mdi:file"
                   class="size-6 text-neutral-200 transition-colors"
                 />
               </NuxtLink>
+              <a
+                :href="data.instruction"
+                download="Hann_Mateusz_resume_web_dev"
+                v-if="data.task_description"
+                >Download instruction</a
+              >
             </div>
           </div>
         </div>
