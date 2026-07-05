@@ -162,6 +162,7 @@ onMounted(() => {
         <button
           @click="selectedClock12 = !selectedClock12"
           class="text-lg xl:text-xl font-semibold ml-auto font-playfair hover:bg-emerald-600 hover:text-neutral-100 px-2 py-1 rounded-xl select-none"
+          :class="selectedClock12 ? ['w-32'] : ['w-24']"
         >
           {{ selectedClock12 ? time12h : time24h }}
         </button>

@@ -3,20 +3,39 @@ const isHovered = ref<boolean>(false);
 
 const experienceData = [
   {
+    workplace: "Intel Technology Gdańsk",
+    start: "since May 2026",
+    end: "",
+    profession: "Web Developer",
+    description: [
+      "Developing the frontend interface for a secure, internal system serving Intel clients using Angular, focusing on scalability and high-performance rendering",
+      "Leveraging RxJS to handle complex asynchronous data streams, ensuring smooth data flow and efficient state management across the client portal",
+      "Building modular, reusable UI components designed to handle dense information architecture and streamline client workflows",
+      "Collaborated in regular team meetings and strategic planning sessions, ensuring frontend development goals remained aligned with overall project objectives and client needs",
+    ],
+  },
+  {
     workplace: "Freelance",
     start: "Sep 2025",
-    end: "Oct 2025",
-    profession: "Full Stack Web Developer",
-    description:
-      "Designed and deployed a responsive landing page for a local language school. I was responsible for the entire development lifecycle—from gathering client requirements and UI design to implementation and SEO optimization. The project resulted in increased online visibility for the client.",
+    end: "Feb 2026",
+    profession: "Web Developer",
+    description: [
+      "Developed a custom Content Management System (CMS) powered by Supabase, enabling the client to independently manage dynamic photo portfolios and service offerings",
+      "Integrated an external calendar system for consultation scheduling and a mailing service to manage incoming client inquiries",
+      "Built a fully responsive frontend tailored to high-end visual design, utilizing Supabase Storage to securely and efficiently deliver heavy image assets across all device types",
+      "Managed the complete development lifecycle, bridging the gap between a visual client-facing interface and a robust backend",
+    ],
   },
   {
     workplace: "Vitalis Gut-Wehlitz",
     start: "Oct 2022",
     end: "",
-    profession: "Frontend Web Developer & Designer",
-    description:
-      "During my internship at a training center in Leipzig, Germany, I worked on website development, design and graphics, while developing communication and organizational skills. The experience gave me insight into the role of a developer and highlighted the importance of collaboration and flexibility.",
+    profession: "Web Developer & Designer",
+    description: [
+      "Developed a personal website, focusing on responsive layouts and intuitive user experiences",
+      "Designed custom graphics and visual 3D assets using Blender",
+      "Practiced strong organizational and communication skills in a fast-paced environment, prioritizing flexibility and effective teamwork",
+    ],
   },
 ];
 </script>
@@ -51,7 +70,9 @@ const experienceData = [
               >{{ e.start }} {{ e.end ? "-" : "" }} {{ e.end }}</span
             >
           </p>
-          <p class="indent-4 text-neutral-500">{{ e.description }}</p>
+          <ul v-for="desc in e.description" class="list-disc">
+            <li class="indent-2 text-neutral-500">{{ desc }}</li>
+          </ul>
         </div>
       </div>
     </div>

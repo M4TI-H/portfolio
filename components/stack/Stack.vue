@@ -21,12 +21,12 @@ const isHovered = ref<boolean>(false);
         </div>
 
         <div class="flex flex-wrap gap-4">
+          <StackIcon icon="logos:angular-icon" title="Angular" />
           <StackIcon icon="logos:nuxt-icon" title="Nuxt" />
           <StackIcon icon="logos:vue" title="Vue.js" />
           <StackIcon icon="logos:typescript-icon" title="TypeScript" />
           <StackIcon icon="logos:javascript" title="JavaScript" />
           <StackIcon icon="logos:tailwindcss-icon" title="Tailwind CSS" />
-          <StackIcon icon="logos:react" title="React" />
         </div>
       </div>
 
